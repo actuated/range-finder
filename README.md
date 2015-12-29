@@ -22,6 +22,8 @@ Example 3: Only scan 10.0-255.0-255.1-10
 
 `./range-finder.sh -o outputfilename.txt --nets 10 --hosts 1-10`
 
+Nmap host discovery scans use the standard options `nmap [range] -sn -n`. The `-sn -n` options are set by `varNmapOpts`, which is placed at the beginning of the file for easy customization if you want to use different host discovery settings.
+
 # Example
 
 ```
