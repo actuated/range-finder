@@ -21,3 +21,39 @@ Example 2: Don't scan 192.168.x.x
 Example 3: Only scan 10.0-255.0-255.1-10
 
 `./range-finder.sh -o outputfilename.txt --nets 10 --hosts 1-10`
+
+# Example
+
+```
+# ./range-finder.sh -o out.txt --nets 172 --hosts 1
+
+==========[ range-finder.sh by tedr@tracesecurity.com ]==========
+
+Networks to scan:
+172.16-31.0-255.x
+
+Hosts to scan on each network:
+1
+
+Command:
+nmap [range] -sn -n
+
+Output file:
+out.txt
+
+Press enter to begin...
+
+=============================[ run ]=============================
+
+Start: Fri Dec 18 15:40:10 CST 2015
+Starting 172.16-31.0-255.x...Done.
+Done: Fri Dec 18 15:40:52 CST 2015
+
+===========================[ results ]===========================
+
+172.17.1.0-255
+172.20.7.0-255
+172.24.44.0-255
+
+=============================[ fin ]=============================
+```
