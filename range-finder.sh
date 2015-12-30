@@ -2,6 +2,7 @@
 # private-ip-map.sh
 # 12/18/2015 by tedr@tracesecurity.com
 # Script to scan private IP ranges to identify ranges or subnets in use.
+# 12/30/2015 Spacing change, added -V to sort
 
 
 # Nmap host discovery scan settings.
@@ -14,7 +15,7 @@ varTempRandom=$(( ( RANDOM % 9999 ) + 1 ))
 varTempFile1="temp-rf1-$varTempRandom.txt"
 if [ -f "$varTempFile1" ]; then rm $varTempFile1; fi
 varDateCreated="12/18/2015"
-varDateLastMod="12/18/2015"
+varDateLastMod="12/30/2015"
 varOutFile="throwerror"
 varHosts="1-4,100-104,250-254"
 varNets="10,172,192"
