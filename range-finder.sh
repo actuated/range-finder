@@ -122,24 +122,24 @@ echo "Start: $varTimeStart"
 if [ "$varDo10" != "" ]; then
   echo -n "Starting 10.0-255.0-255.x..."
   nmap 10.0-255.0-255.$varHosts $varNmapOpts -oG - | awk '/Up/{print $2}' | awk -F "." '{print $1 "." $2 "." $3 ".0-255"}' >> $varTempFile1
-  echo "Done."
+  echo " Done."
 fi
 if [ "$varDo172" != "" ]; then
   echo -n "Starting 172.16-31.0-255.x..."
   nmap 172.16-31.0-255.$varHosts $varNmapOpts -oG - | awk '/Up/{print $2}' | awk -F "." '{print $1 "." $2 "." $3 ".0-255"}' >> $varTempFile1
-  echo "Done."
+  echo " Done."
 fi
 if [ "$varDo192" != "" ]; then
   echo -n "Starting 192.168.0-255.x..."
   nmap 192.168.0-255.$varHosts $varNmapOpts -oG - | awk '/Up/{print $2}' | awk -F "." '{print $1 "." $2 "." $3 ".0-255"}' >> $varTempFile1
-  echo "Done."
+  echo " Done."
 fi
 varTimeDone=$(date)
 echo "Done: $varTimeDone"
 echo
 echo "===========================[ results ]==========================="
 echo
-cat $varTempFile1 | sort | uniq | tee $varOutFile
+cat $varTempFile1 | sort -V | uniq | tee $varOutFile
 # Remove temp file
 if [ -f $varTempFile1 ]; then rm $varTempFile1; fi
 echo
