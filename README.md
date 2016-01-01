@@ -29,7 +29,7 @@ Nmap host discovery scans use the standard options `nmap [range] -sn -n`. The `-
 ```
 # ./range-finder.sh -o out.txt --nets 172 --hosts 1
 
-==========[ range-finder.sh by tedr@tracesecurity.com ]==========
+=========[ range-finder.sh by Ted R (github: actuated) ]=========
 
 Networks to scan:
 172.16-31.0-255.x

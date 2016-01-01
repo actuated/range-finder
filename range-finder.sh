@@ -1,8 +1,9 @@
 #!/bin/bash
 # private-ip-map.sh
-# 12/18/2015 by tedr@tracesecurity.com
+# 12/18/2015 by Ted R (http://github.com/actuated)
 # Script to scan private IP ranges to identify ranges or subnets in use.
 # 12/30/2015 Spacing change, added -V to sort
+# 1/1/2016 - Aesthetic change
 
 
 # Nmap host discovery scan settings.
@@ -15,7 +16,7 @@ varTempRandom=$(( ( RANDOM % 9999 ) + 1 ))
 varTempFile1="temp-rf1-$varTempRandom.txt"
 if [ -f "$varTempFile1" ]; then rm $varTempFile1; fi
 varDateCreated="12/18/2015"
-varDateLastMod="12/30/2015"
+varDateLastMod="1/1/2016"
 varOutFile="throwerror"
 varHosts="1-4,100-104,250-254"
 varNets="10,172,192"
@@ -25,12 +26,14 @@ varQuiet="N"
 function usage
 {
   echo
-  echo "==========[ range-finder.sh by tedr@tracesecurity.com ]=========="
+  echo "=========[ range-finder.sh by Ted R (github: actuated) ]========="
   echo
   echo "This script uses Nmap to scan a sample of hosts in each IANA"
   echo "private IP address range or subnet."
   echo
   echo "This can be used to identify which subnets or ranges are in use."
+  echo  
+  echo "Created $varDateCreated, last modified $varDateLastMod."
   echo
   echo "============================[ usage ]============================"
   echo
@@ -59,8 +62,6 @@ function usage
   echo "-The script will use the standard -sn host discovery option. You"
   echo " can change this by modifying the varNmapOpts value at the start"
   echo " of the script file."
-  echo  
-  echo "-Created $varDateCreated, last modified $varDateLastMod."
   echo
   exit
 }
@@ -97,7 +98,7 @@ varDo172=$(echo "$varNets" | grep 172)
 varDo192=$(echo "$varNets" | grep 192)
 
 echo
-echo "==========[ range-finder.sh by tedr@tracesecurity.com ]=========="
+echo "=========[ range-finder.sh by Ted R (github: actuated) ]========="
 echo
 # Confirm info
 echo "Networks to scan:"
