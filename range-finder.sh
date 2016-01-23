@@ -1,9 +1,10 @@
 #!/bin/bash
-# private-ip-map.sh
+# range-finder.sh
 # 12/18/2015 by Ted R (http://github.com/actuated)
 # Script to scan private IP ranges to identify ranges or subnets in use.
 # 12/30/2015 Spacing change, added -V to sort
 # 1/1/2016 - Aesthetic change
+# 1/22/2016 - Aesthetic change
 
 
 # Nmap host discovery scan settings.
@@ -16,7 +17,7 @@ varTempRandom=$(( ( RANDOM % 9999 ) + 1 ))
 varTempFile1="temp-rf1-$varTempRandom.txt"
 if [ -f "$varTempFile1" ]; then rm $varTempFile1; fi
 varDateCreated="12/18/2015"
-varDateLastMod="1/1/2016"
+varDateLastMod="1/22/2016"
 varOutFile="throwerror"
 varHosts="1-4,100-104,250-254"
 varNets="10,172,192"
